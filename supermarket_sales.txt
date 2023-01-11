@@ -1,0 +1,40 @@
+SELECT Branch, Productline, Unitprice, Quantity, total, Payment, cogs
+FROM supermarket_sales
+GROUP BY 7
+ORDER BY 7
+
+
+
+SELECT City, Productline, Unitprice, Quantity, total, Rating, Payment
+FROM supermarket_sales
+WHERE City is 'Mandalay' AND Rating is '5' 
+ORDER BY 4
+
+
+
+SELECT
+  COUNT(*) AS count_productline,
+  Productline
+FROM supermarket_sales
+GROUP BY Productline
+ORDER BY count_productline DESC
+
+
+
+
+SELECT City , Productline, total, Date
+FROM supermarket_sales
+WHERE total >=1000 
+ORDER BY 3
+ASC
+
+
+
+SELECT
+  Customertype, Gender,
+  SUM(total) AS Total,
+ COUNT(Quantity) AS quantity
+FROM supermarket_sales
+WHERE Gender = 'Male' AND Customertype = 'Member'
+
+
